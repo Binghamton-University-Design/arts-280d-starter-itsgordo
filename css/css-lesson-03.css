@@ -1,0 +1,79 @@
+/*stylesheet*/
+
+body {
+  background-color: #202030;
+  color: #000;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  background-image: url("../images/galapagos.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#wrapper {
+  margin: 2em auto;
+  max-width: 960px;
+  padding: 0 20px;
+}
+
+.article {
+  position: relative;
+  width: 900px;
+  overflow: hidden;
+  padding: 60px 0 20px 0;
+  background-color: #fff;
+}
+
+.article div {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.box {
+  float: right;
+  width: 230px;
+  border: solid black 3px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.masthead {
+  width: 840px;
+  border: solid black 3px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.half, .second-half{
+  width: calc(50% - 40px);
+  padding: 20px;
+}
+
+.half {
+  float: left;
+}
+
+.second-half {
+  float: right;
+}
+
+.em-size-box {
+  width: 2em;
+  height: 2em;
+  background-color: orange !important;
+}
+
+.new-font-size{
+  font-size: 64px;
+}
+
+.rem-size-box {
+  width: 2rem;
+  height: 2rem;
+  background-color: red !important;
+}
+
+.vw-vh-demo {
+  background-color: purple;
+  width: 100vw;
+  height: 100vh;
+}
