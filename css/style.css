@@ -1,6 +1,12 @@
+/* vars */
+:root {
+  --background-color: #fff;
+  --body-color: #111;
+}
+
 body {
-  background-color: #ffffff;
-  color: #333333;
+  background-color: var(--background-color);
+  color: var(--body-color);
   font-family: "Roboto Mono", monospace;
   line-height: 1.5;
 }
@@ -49,7 +55,7 @@ h4 {
 }
 
 #logo a {
-  color: #000;
+  color: var(--body-color);
   text-decoration: none;
   display: flex;
   width: 100%;
@@ -72,7 +78,7 @@ h4 {
 /*NAV*/
 
 #nav a {
-  color: #000;
+  color: var(--body-color);
   font-weight: 300;
   letter-spacing: 2px;
   text-decoration-color: transparent;
@@ -83,7 +89,7 @@ h4 {
 }
 
 #nav a:hover {
-  text-decoration-color: #000;
+  text-decoration-color: var(--body-color);
 }
 
 #nav.active {
@@ -156,7 +162,7 @@ h4 {
 .hamburger-inner::after {
   width: 24px;
   height: 2px;
-  background-color: #000;
+  background-color: var(--body-color);
   border-radius: 0px;
   position: absolute;
   transition-property: transform;
@@ -212,8 +218,18 @@ h4 {
   height: 70vh;
 }
 
-#work h3{
+#work h3,
+#writings h3,
+#portfolio h3 {
+  letter-spacing: 1px;
   margin-bottom: 2rem;
+}
+
+#work h3 a,
+#writings h3 a,
+#portfolio h3 a {
+  color: var(--body-color);
+  text-decoration: none;
 }
 
 .work-item {
@@ -222,7 +238,7 @@ h4 {
   position: relative;
   width: 100%;
   padding-top: calc((1 / 1) * 100%);
-  background-color: #000;
+  background-color: var(--body-color);
 }
 
 .work-item .inner {
@@ -240,7 +256,7 @@ h4 {
 .work-item .inner .work-inside {
   transition: opacity 0.3s ease-in-out;
   opacity: 0;
-  color: #fff;
+  color: var(--background-color);
   padding: 2rem;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
@@ -261,12 +277,65 @@ h4 {
   height: 100%;
 }
 
+.writing-item .date-holder {
+  margin-bottom: 0.25em;
+}
+
+.writing-item .date {
+  margin: 0;
+  font-size: 0.85rem;
+  padding: 0 4px;
+  color: var(--background-color);
+  display: inline-block;
+  background-color: var(--body-color);
+}
+
+.writing-item h2 a {
+  color: var(--body-color);
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.3s ease-in-out;
+}
+
+.writing-item h2 a:hover {
+  color: var(--body-color);
+  text-decoration-color: var(--body-color);
+}
+
+.writing-item p a {
+  color: var(--body-color);
+  text-decoration-color: var(--body-color);
+}
+
+/*PORTFOLIO*/
+
+#portfolio {
+  margin-top: 2rem;
+}
+
+#portfolio .work-item {
+  padding-top: calc((9 / 16) * 100%);
+}
+
+#portfolio .work-item .inner .work-inside {
+  opacity: 1;
+}
+
+#portfolio p a {
+  color: var(--body-color);
+  text-decoration-color: var(--body-color);
+  transition: text-decoration-color 0.3s ease-in-out;
+}
+
+#portfolio p a:hover {
+  text-decoration-color: transparent;
+}
+
 /*FOOTER*/
 
 #footer {
-    text-align: right;
-    font-size: .85rem;
-  }
+  text-align: right;
+  font-size: 0.85rem;
+}
 
 /*RESPONSIVE*/
 
@@ -282,7 +351,7 @@ h4 {
     display: block;
   }
   #nav {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--body-color);
     display: none;
   }
   #nav li {
