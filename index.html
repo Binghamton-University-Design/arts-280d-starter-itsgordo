@@ -1,8 +1,99 @@
-<html>
-    <head>
-        <title>Hello World</title>
-    </head>
-    <body>
-        <h1>Hello World</h1>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="keywords" content="design, html, css, frontend, developer, designer">
+    <meta name="description" content="Personal Website of Gordon Liang">
+    <title>Gordon Liang</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/grid.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="masthead" class="grid">
+
+            <div id="logo" class="width-9-12-m width-5-12">
+                <a href="/" title="Gordon Liang">
+                    <h1>Gordon Liang</h1>
+                </a>
+            </div>
+
+            <div id="nav-button" class="width-3-12-m width-12-12">
+                <div id="nav-button-holder">
+                    <button class="hamburger hamburger--squeeze" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="nav" class="width-12-12-m width-7-12">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main" class="grid">
+            <div id="intro" class="width-12-12-m width-12-12">
+                <div id="intro-holder">
+                    <h1>We are the music makers. And we are the dreamers of the dreams.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div id="work" class="width-12-12-m width-12-12">
+
+            <h3>Selected Work</h3>
+
+            <div id="work-holder" class="grid">
+
+                <div class="width-12-12-m width-6-12 work-item">
+                    <a class="inner" href="portfolio-single.html" title="Hell Yes">
+                        <div class="work-inside">
+                            <h2>Hell Yes</h2>
+                            <p>Live Twitter. The good, the bad, the ugly. And the bots. Everything with a "Hell Yes!"
+                            </p>
+                        </div>
+                        <img title="Every Single Person" src="images/yes.png" />
+                    </a>
+                </div>
+
+                <div class="width-12-12-m width-6-12 work-item">
+                    <a class="inner" href="portfolio-single.html" title="Every Single Person">
+                        <div class="work-inside">
+                            <h2>Every Single Person</h2>
+                            <p>Every single reported COVID-19 case by country.</p>
+                        </div>
+                        <img title="Every Single Person" src="images/everysinglecase.png" />
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <div id="footer" class="grid">
+            <div class="width-12-12-m width-12-12">
+                <p>Copyright ©2020 · Gordon Liang</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
 </html>
