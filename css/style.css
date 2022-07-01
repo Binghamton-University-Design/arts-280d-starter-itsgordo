@@ -5,9 +5,12 @@
 }
 
 body {
-  background-color: var(--background-color);
+  background: url("../images/background.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 20rem;
   color: var(--body-color);
-  font-family: "Roboto Mono", monospace;
+  font-family: "Cuprum", sans-serif;
   line-height: 1.5;
 }
 
@@ -16,13 +19,14 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+#nav {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Bangers", cursive;
 }
 
 h1 {
-  font-size: 4.2rem;
+  font-size: 6.2rem;
 }
 
 h2 {
@@ -37,15 +41,22 @@ h4 {
   font-size: 1rem;
 }
 
-#wrapper {
-  margin: 2rem auto;
+#wrapper,
+#masthead,
+#intro {
+  margin: auto;
   max-width: 1220px;
-  padding: 0 2rem;
+  background-color: var(--background-color);
 }
 
-/*MASTHEAD*/
+#wrapper {
+  padding: 2rem calc(2rem + 20px) 1.5rem 2rem;
+}
 
-#masthead,
+#masthead {
+  padding: 0.4rem calc(2rem + 20px) 1rem 2rem;
+}
+/*MASTHEAD*/
 #main {
   margin-bottom: 2rem;
 }
@@ -66,11 +77,12 @@ h4 {
 #logo h1 {
   letter-spacing: 1px;
   font-weight: 300;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  margin-top: 20px;
 }
 
-#logo svg {
-  margin-right: 0.25rem;
+#logo img {
+  margin-right: 0.5rem;
   height: 3.6rem;
   width: auto;
 }
@@ -88,7 +100,8 @@ h4 {
   transition: text-decoration-color.4s cubic-bezier(0.694, 0.0482, 0.335, 1);
 }
 
-#nav a:hover {
+#nav a:hover,
+#nav a.active {
   text-decoration-color: var(--body-color);
 }
 
@@ -109,6 +122,27 @@ h4 {
 
 #nav li {
   flex: 3;
+  font-size: 20px;
+}
+
+.nav-duck img,
+.active-duck img {
+  height: 20px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.active-duck img {
+  opacity: 1 !important;
+}
+
+.nav-duck,
+.active-duck {
+  max-height: 20px;
+}
+
+#nav a:hover .nav-duck img {
+  opacity: 1;
 }
 
 #nav-button {
@@ -216,6 +250,14 @@ h4 {
   display: flex;
   align-items: center;
   height: 70vh;
+  padding: 0 calc(2rem + 10px);
+  background: url("../images/duckie.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: orange;
+  text-shadow: 2px 2px black;
+  box-shadow: inset 0px 0px 0px 10px black;
 }
 
 #work h3,
@@ -239,6 +281,8 @@ h4 {
   width: 100%;
   padding-top: calc((1 / 1) * 100%);
   background-color: var(--body-color);
+  border: black 10px solid;
+  z-index: 3;
 }
 
 .work-item .inner {
@@ -275,6 +319,8 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .writing-item .date-holder {
@@ -288,6 +334,25 @@ h4 {
   color: var(--background-color);
   display: inline-block;
   background-color: var(--body-color);
+}
+
+.writing-item img {
+  display: block;
+  width: 100%;
+  height: 8rem;
+  object-fit: cover;
+  object-position: center;
+  border: black 10px solid;
+}
+
+.writing-item .caption {
+  font-size: 0.75rem;
+  color: #666666;
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  text-align: right;
 }
 
 .writing-item h2 a {
@@ -306,10 +371,12 @@ h4 {
   text-decoration-color: var(--body-color);
 }
 
-/*PORTFOLIO*/
+/*PORTFOLIO + WRITING*/
 
-#portfolio {
+#portfolio,
+#writings {
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 #portfolio .work-item {
@@ -330,11 +397,58 @@ h4 {
   text-decoration-color: transparent;
 }
 
+#aboutimg {
+  width: 20rem;
+  height: 20rem;
+}
+
+#blogimg {
+  width: 100%;
+  height: auto;
+}
+
 /*FOOTER*/
 
 #footer {
   text-align: right;
   font-size: 0.85rem;
+}
+
+/* DUCK GENERATOR */
+#lower-left {
+  margin-bottom: 1px;
+  margin-left: 1px;
+  position: fixed;
+  bottom: 0;
+  z-index: 4;
+}
+
+#random-duck {
+  display: none;
+  object-fit: cover;
+  object-position: center;
+  height: 150px;
+  width: 150px;
+  background-image: url(../images/loading.gif);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  border: black 5px solid;
+}
+
+#close {
+  height: 30px;
+  width: auto;
+}
+
+#click-duck {
+  height: 100px;
+  width: auto;
+}
+
+#click-duck:hover,
+#close:hover {
+  filter: drop-shadow(0 0 5px black);
 }
 
 /*RESPONSIVE*/
@@ -362,11 +476,26 @@ h4 {
   #intro-holder h1 {
     font-size: 3.2rem;
   }
+  #intro {
+    height: 40vh;
+  }
+  #random-duck {
+    height: 100px;
+    width: 100px;
+  }
+  #close {
+    height: 20px;
+    width: auto;
+  }
+  #click-duck {
+    height: 80px;
+    width: auto;
+  }
 }
 
 @media all and (min-width: 700px) {
   #intro {
-    height: 70vh;
+    height: 60vh;
   }
   #intro-holder {
     padding: 0 5em;
